@@ -2,6 +2,7 @@ const express = require("express");
 const { ApolloServer, gql } = require("apollo-server-express");
 require("dotenv").config();
 const db = require("./db");
+const models = require("./models");
 
 // Run the server on a port specified in our .env file or port 4000
 const port = process.env.PORT || 4000;
@@ -53,6 +54,10 @@ const resolvers = {
     notes: () => notes,
     note: (parent, args) => {
       return notes.find((note) => note.id === args.id);
+    },
+
+    notes: async () => {
+      return await models.Note.find();
     },
   },
 
