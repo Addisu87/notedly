@@ -34,7 +34,12 @@
 
 # 📖 [your_project_name] <a name="about-project"></a>
 
-> Describe your project in 1 or 2 sentences.
+> Users will be able to create an account, write notes in plain text or Markdown, edit their notes, view a feed of other users’ notes, and “favorite” the notes of other users.
+
+Excerpt From
+JavaScript Everywhere
+Adam D. Scott
+This material may be protected by copyright.
 
 **[your_project__name]** is a...
 
