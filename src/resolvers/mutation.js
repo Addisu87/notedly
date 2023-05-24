@@ -23,16 +23,41 @@ module.exports = {
     });
   },
 
-  deleteNote: async (parent, { id }, { models }) => {
+  deleteNote: async (parent, { id }, { models, user }) => {
+    // if not a user, throw an Authentication Error
+    if (!user) {
+      throw new AuthenticationError("You must be signed in to delete a note");
+    }
+    // find the note
+    const note = await models.Note.findById(id);
+    // If the note owner and current user don't match, throw a forbidden error
+    if (note && String(note.author) !== user.id) {
+      throw new ForbiddenError("You don't have permissions to delete the note");
+    }
+
     try {
-      await models.Note.findByIdAndRemove({ _id: id });
+      await note.remove();
       return true;
     } catch (error) {
+      // If there's an error along the way,return false
       return false;
     }
   },
 
-  updateNote: async (parent, { content, id }, { models }) => {
+  updateNote: async (parent, { content, id }, { models, user }) => {
+    // if not a user, throw an Authentication Error
+    if (!user) {
+      throw new AuthenticationError("You must be signed in to update a note");
+    }
+
+    // find a note
+    const note = await models.Note.findById(id);
+    // if the note owner and current user don't match, throw a forbidden error message
+    if (note && String(note.author) !== user.id) {
+      throw new ForbiddenError("You don't have permissions to update the note");
+    }
+
+    // Update the note in the db and return the updated note
     return await models.Note.findByIdAndUpdate(
       {
         _id: id,
