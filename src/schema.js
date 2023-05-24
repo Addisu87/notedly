@@ -10,6 +10,8 @@ const schema = gql`
     author: User!
     createdAt: DateTime!
     updatedAt: DateTime!
+    favoriteCount: Int!
+    favoriteBy: [user!]
   }
 
   type User {
@@ -18,6 +20,7 @@ const schema = gql`
     email: String!
     avatar: String!
     notes: [Note!]!
+    favorites: [Note!]!
   }
 
   type Query {
@@ -34,6 +37,7 @@ const schema = gql`
     deleteNote(id: ID!): Boolean!
     signUp(username: String!, email: String!, password: String!): String!
     signIn(username: String, email: String, password: String!): String!
+    toggleFavorite(id: ID!): Note!
   }
 `;
 
