@@ -10,7 +10,7 @@ module.exports = {
     // find a user given their username
     return await models.User.findOne({ username });
   },
-  users: async (parent, args, { models, user }) => {
+  users: async (parent, args, { models }) => {
     // find all users
     return await models.User.find({});
   },

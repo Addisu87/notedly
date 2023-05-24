@@ -11,7 +11,7 @@ const schema = gql`
     createdAt: DateTime!
     updatedAt: DateTime!
     favoriteCount: Int!
-    favoriteBy: [user!]
+    favoritedBy: [User!]
   }
 
   type User {
