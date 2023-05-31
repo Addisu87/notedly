@@ -1,9 +1,7 @@
 <a name="readme-top"></a>
 
 <div align="center">
-
   <h3><b>Notedly</b></h3>
-
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -182,17 +180,11 @@ Example:
 
 > Mention all of the collaborators of this project.
 
-👤 **Author1**
+👤 **Addisu Haile**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [![GitHub Badge](https://img.shields.io/badge/-Addisu87-white?logo=GitHub&logoColor=181717&style=plastic)](https://github.com/Addisu87)
+- Twitter: [![Twitter Badge](https://img.shields.io/badge/-AddisuTedla-white?logo=Twitter&logoColor=1DA1F2&style=plastic)](https://twitter.com/AddisuTedla)
+- LinkedIn: [![LinkedIn Badge](https://img.shields.io/badge/-addisu_tedla-white?logo=LinkedIn&logoColor=1DA1F2&style=plastic)](https://linkedin.com/in/addisu-tedla/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

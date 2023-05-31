@@ -19,7 +19,7 @@ module.exports = {
     return await models.Note.create({
       content: args.content,
       // reference the author's mongo id
-      author: mongoose.Types.ObjectId(user.id),
+      author: new mongoose.Types.ObjectId(user.id),
     });
   },
 
@@ -134,7 +134,7 @@ module.exports = {
       return await models.Note.findByIdAndUpdate(
         id,
         {
-          $pull: { favoritedBy: mongoose.Types.ObjectId(user.id) },
+          $pull: { favoritedBy: new mongoose.Types.ObjectId(user.id) },
           $inc: { favoriteCount: -1 },
         },
         {
@@ -148,7 +148,7 @@ module.exports = {
       return await models.Note.findByIdAndUpdate(
         id,
         {
-          $push: { favoritedBy: mongoose.Types.ObjectId(user.id) },
+          $push: { favoritedBy: new mongoose.Types.ObjectId(user.id) },
           $inc: { favoriteCount: 1 },
         },
         { new: true }
