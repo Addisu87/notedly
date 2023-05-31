@@ -2,6 +2,7 @@ const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
 require("dotenv").config();
 const helmet = require("helmet");
+const cors = require("cors");
 
 // Local module imports
 const db = require("./db");
@@ -17,6 +18,7 @@ const DB_HOST = process.env.DB_HOST;
 const app = express();
 // Use Helmet!
 app.use(helmet());
+app.use(cors());
 
 // Connect to the database
 db.connect(DB_HOST);
