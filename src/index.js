@@ -3,6 +3,8 @@ const { ApolloServer } = require("apollo-server-express");
 require("dotenv").config();
 const helmet = require("helmet");
 const cors = require("cors");
+const depthLimit = require("graphql-depth-limit");
+const { createComplexityLimitRule } = require("graphql-validation-complexity");
 
 // Local module imports
 const db = require("./db");
