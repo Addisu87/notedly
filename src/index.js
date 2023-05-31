@@ -42,6 +42,7 @@ const getUser = (token) => {
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  validationRules: [depthLimit(5), createComplexityLimitRule(1000)],
   context: ({ req }) => {
     // get the user token from the headers
     const token = req.headers.authorization;
