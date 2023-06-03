@@ -1,6 +1,10 @@
 const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
 require("dotenv").config();
+const helmet = require("helmet");
+const cors = require("cors");
+const depthLimit = require("graphql-depth-limit");
+const { createComplexityLimitRule } = require("graphql-validation-complexity");
 
 // Local module imports
 const db = require("./db");
@@ -14,6 +18,9 @@ const port = process.env.PORT || 4000;
 // Store the DB_HOST value as a variable
 const DB_HOST = process.env.DB_HOST;
 const app = express();
+// Use Helmet!
+app.use(helmet());
+app.use(cors());
 
 // Connect to the database
 db.connect(DB_HOST);
@@ -35,6 +42,7 @@ const getUser = (token) => {
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  validationRules: [depthLimit(5), createComplexityLimitRule(1000)],
   context: ({ req }) => {
     // get the user token from the headers
     const token = req.headers.authorization;
