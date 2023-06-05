@@ -1,4 +1,3 @@
-import "./App.css";
 import GlobalStyle from "./components/GlobalStyle";
 import Pages from "./pages/index";
 
