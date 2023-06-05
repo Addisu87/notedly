@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./home";
 import MyNotes from "./mynotes";
 import Favorites from "./favorites";
@@ -7,9 +7,11 @@ import Favorites from "./favorites";
 const Pages = () => {
   return (
     <Router>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/mynotes" component={MyNotes} />
-      <Route exact path="/favorites" component={Favorites} />
+      <Routes>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/mynotes" component={MyNotes} />
+        <Route exact path="/favorites" component={Favorites} />
+      </Routes>
     </Router>
   );
 };
