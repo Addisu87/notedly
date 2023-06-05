@@ -4,13 +4,14 @@ import Home from "./home";
 import MyNotes from "./mynotes";
 import Favorites from "./favorites";
 
+// define routes
 const Pages = () => {
   return (
     <Router>
       <Routes>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/mynotes" component={MyNotes} />
-        <Route exact path="/favorites" component={Favorites} />
+        <Route exact path="/" element={<Home />} />
+        <Route path="/mynotes" element={<MyNotes />} />
+        <Route path="/favorites" element={<Favorites />} />
       </Routes>
     </Router>
   );
