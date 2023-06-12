@@ -1,19 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { FaHome, FaBook, FaStar } from "react-icons/fa";
 
 const Navigation = () => {
   return (
     <Nav>
       <NavList>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/">
+            <FaHome />
+            Home
+          </Link>
         </li>
         <li>
-          <Link to="/mynotes">My Notes</Link>
+          <Link to="/mynotes">
+            <FaBook />
+            My Notes
+          </Link>
         </li>
         <li>
-          <Link to="/favorites">Favorites</Link>
+          <Link to="/favorites">
+            <FaStar />
+            Favorites
+          </Link>
         </li>
       </NavList>
     </Nav>
