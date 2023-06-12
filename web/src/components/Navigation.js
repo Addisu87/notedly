@@ -35,6 +35,7 @@ export default Navigation;
 const Nav = styled.nav`
   padding: 1em;
   background: #f5f4f0;
+
   @media (max-width: 700px) {
     padding-top: 64px;
   }
