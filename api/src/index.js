@@ -19,7 +19,12 @@ const port = process.env.PORT || 4000;
 const DB_HOST = process.env.DB_HOST;
 const app = express();
 // Use Helmet!
-app.use(helmet());
+app.use(
+  helmet({
+    contentSecurityPolicy:
+      process.env.NODE_ENV === "production" ? undefined : false,
+  })
+);
 app.use(cors());
 
 // Connect to the database
